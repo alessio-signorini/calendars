@@ -29,7 +29,7 @@ get '/foreca' do
 
 		@events.push({
 			'uid'			=> Digest::MD5.hexdigest(item['time']),
-			'dtstart'		=> DateTime.parse(item['time'][0,10]),
+			'dtstart'		=> DateTime.parse(item['time'][0,10]).to_date,
 			'summary'		=> "#{icon}  #{temp.to_i}F #{wind.to_i}mph",
 			'description'	=> JSON.pretty_generate(item) 
 		})
