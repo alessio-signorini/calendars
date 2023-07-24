@@ -32,5 +32,6 @@ end
 require './calendar/corepower'
 require './calendar/spaceflightnow'
 require './calendar/foreca'
+require './calendar/mindbodyonline'
 
 run Sinatra::Application
