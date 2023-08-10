@@ -15,7 +15,7 @@ get '/spaceflightnow' do
 	missions.reverse.each do |mission|
 		date = Date.parse(mission.match(/<span class="launchdate">(.+?)<\/span>/mu)[1].strip) rescue next
 		name = mission.match(/<span class="mission">(.+?)<\/span>/)[1].strip
-		time = mission.match(/<span class="strong">Launch time:<\/span>.+(\d{4}) GMT.+<BR>/m)[1].strip rescue next
+		time = mission.match(/\((\d{4}) UTC\)<BR>/m)[1].strip rescue next
 		location = mission.match(/Launch site:<\/span>(.+?)<\/div>/)[1].strip
 		description = mission.match(/<p>(.+?)<\/p>/m)[1].strip rescue ''
 
