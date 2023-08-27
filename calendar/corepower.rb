@@ -1,9 +1,9 @@
 require 'net/http'
 
 get '/corepower' do
-	hostname = ENV['COREPOWER_HOSTNAME'] || 'ijx69mqhxg.execute-api.us-west-1.amazonaws.com'
+	hostname = ENV['COREPOWER_HOSTNAME'] || 'api2.corepoweryoga.com'
 
-	uri = URI("https://#{hostname}/main/schedules")
+	uri = URI("https://#{hostname}/schedules")
 
 	query_params = {
 		:start_date => Date.today,
