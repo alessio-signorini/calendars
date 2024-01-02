@@ -5,7 +5,7 @@ require 'digest'
 #@events = []
 get '/mindbodyonline' do
 
-	uri = URI("https://widgets.mindbodyonline.com/widgets/schedules/167302/print")
+	uri = URI("https://widgets.mindbodyonline.com/widgets/schedules/203520/print")
 	res = Net::HTTP.get_response(uri)
 	halt 502, {'Content-Type' => 'text/plain'}, res.body unless res.is_a?(Net::HTTPSuccess)
 	
